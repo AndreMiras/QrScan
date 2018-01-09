@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = My Application
+title = QRCode & Barcode scanner
 
 # (str) Package name
-package.name = myapp
+package.name = qrscan
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = com.github.andremiras
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -36,7 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
-requirements = kivy
+requirements = kivy, pil, libiconv, libzbar, zbar
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -44,6 +44,7 @@ requirements = kivy
 
 # (list) Garden requirements
 #garden_requirements =
+garden_requirements = xcamera, zbarcam
 
 # (str) Presplash of the application
 #presplash.filename = %(source.dir)s/data/presplash.png
@@ -86,6 +87,7 @@ fullscreen = 0
 
 # (list) Permissions
 #android.permissions = INTERNET
+android.permissions = CAMERA
 
 # (int) Android API to use
 #android.api = 19
@@ -220,7 +222,7 @@ android.arch = armeabi-v7a
 [buildozer]
 
 # (int) Log level (0 = error only, 1 = info, 2 = debug (with command output))
-log_level = 1
+log_level = 2
 
 # (int) Display warning if buildozer is run as root (0 = False, 1 = True)
 warn_on_root = 1
