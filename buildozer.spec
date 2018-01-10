@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = QRCode & Barcode scanner
+title = QRCode &amp; Barcode scanner
 
 # (str) Package name
 package.name = qrscan
