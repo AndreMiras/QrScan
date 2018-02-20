@@ -36,7 +36,13 @@ version = 0.1
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
-requirements = kivy, pil, libiconv, libzbar, zbar
+requirements =
+    kivy,
+    pil,
+    libiconv,
+    libzbar,
+    zbar,
+    https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes

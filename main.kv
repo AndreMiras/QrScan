@@ -1,11 +1,34 @@
+#:import Toolbar kivymd.toolbar.Toolbar
 #:import ZBarCam kivy.garden.zbarcam.ZBarCam
+
+
+<QRScanScreen>:
+    ZBarCam:
+        id: zbarcam_id
+
+
+<QRFoundScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        MDLabel:
+            text: root.data_property
 
 
 BoxLayout:
     orientation: 'vertical'
-    ZBarCam:
-        id: zbarcam
-    Label:
-        size_hint: None, None
-        size: self.texture_size[0], 50
-        text: ", ".join([str(symbol.data) for symbol in zbarcam.symbols])
+	Toolbar:
+		id: toolbar_id
+		title: 'QRCode & Barcode scanner'
+        md_bg_color: app.theme_cls.primary_color
+        background_palette: 'Primary'
+        background_hue: '500'
+		left_action_items: [['menu', lambda x: app.root.toggle_nav_drawer()]]
+		right_action_items: [['dots-vertical', lambda x: app.root.toggle_nav_drawer()]]
+    ScreenManager:
+        id: screen_manager_id
+        QRScanScreen:
+            id: qrscan_screen_id
+            name: 'qrscan_screen'
+        QRFoundScreen:
+            id: qrfound_screen_id
+            name: 'qrfound_screen'
