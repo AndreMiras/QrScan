@@ -14,16 +14,17 @@
             text: root.data_property
 
 
+<CustomToolbar>:
+    title: 'QRCode & Barcode scanner'
+    md_bg_color: app.theme_cls.primary_color
+    background_palette: 'Primary'
+    background_hue: '500'
+
+
 BoxLayout:
     orientation: 'vertical'
-	Toolbar:
+	CustomToolbar:
 		id: toolbar_id
-		title: 'QRCode & Barcode scanner'
-        md_bg_color: app.theme_cls.primary_color
-        background_palette: 'Primary'
-        background_hue: '500'
-		left_action_items: [['menu', lambda x: app.root.toggle_nav_drawer()]]
-		right_action_items: [['dots-vertical', lambda x: app.root.toggle_nav_drawer()]]
     ScreenManager:
         id: screen_manager_id
         QRScanScreen:
