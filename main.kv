@@ -1,5 +1,10 @@
 #:import Toolbar kivymd.toolbar.Toolbar
 #:import ZBarCam kivy.garden.zbarcam.ZBarCam
+#:import MDTextField kivymd.textfields.MDTextField
+
+
+# need this hack to push widgets up
+<PushUp@BoxLayout>:
 
 
 <QRScanScreen>:
@@ -10,8 +15,14 @@
 <QRFoundScreen>:
     BoxLayout:
         orientation: 'vertical'
-        MDLabel:
+        MDTextField:
             text: root.data_property
+            readonly: True
+            multiline: True
+        MDRaisedButton:
+            text: 'Copy'
+			on_release: root.copy_to_clipboard()
+        PushUp:
 
 
 <CustomToolbar>:

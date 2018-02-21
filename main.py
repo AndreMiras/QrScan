@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from kivy.app import App
 from kivy.clock import Clock
+from kivy.core.clipboard import Clipboard
 from kivy.properties import StringProperty
 from kivy.uix.screenmanager import Screen
 from kivymd.theming import ThemeManager
@@ -71,6 +72,12 @@ class QRFoundScreen(Screen):
         """
         app = App.get_running_app()
         app.root.ids.toolbar_id.load_default_buttons()
+
+    def copy_to_clipboard(self):
+        """
+        Copies `data_property` to clipboard.
+        """
+        Clipboard.copy(self.data_property)
 
 
 class MainApp(App):
