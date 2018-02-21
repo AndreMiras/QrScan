@@ -7,6 +7,8 @@ from kivy.uix.screenmanager import Screen
 from kivymd.theming import ThemeManager
 from kivymd.toolbar import Toolbar
 
+from version import __version__
+
 
 class CustomToolbar(Toolbar):
 
@@ -15,12 +17,57 @@ class CustomToolbar(Toolbar):
         Clock.schedule_once(self.load_default_buttons)
 
     def load_default_buttons(self, dt=None):
-        self.left_action_items = [['menu', lambda x: None]]
-        self.right_action_items = [['dots-vertical', lambda x: None]]
+        app = App.get_running_app()
+        self.left_action_items = [
+            ['menu', lambda x: app.root.toggle_nav_drawer()]]
+        self.right_action_items = [
+            ['dots-vertical', lambda x: app.root.toggle_nav_drawer()]]
 
     def load_back_button(self, function):
         # lambda x: app.root.toggle_nav_drawer()
         self.left_action_items = [['arrow-left', lambda x: function()]]
+
+
+class SubScreen(Screen):
+    """
+    Helper parent class for updating toolbar on enter/leave.
+    """
+
+    def on_back(self):
+        self.manager.transition.direction = 'right'
+        self.manager.current = 'qrscan_screen'
+
+    def on_enter(self):
+        """
+        Loads the toolbar back button.
+        """
+        app = App.get_running_app()
+        app.root.ids.toolbar_id.load_back_button(self.on_back)
+
+    def on_leave(self):
+        """
+        Loads the toolbar default button.
+        """
+        app = App.get_running_app()
+        app.root.ids.toolbar_id.load_default_buttons()
+
+
+class AboutScreen(SubScreen):
+    project_page_property = StringProperty(
+        "https://github.com/AndreMiras/QrScan")
+    about_text_property = StringProperty()
+
+    def __init__(self, **kwargs):
+        super(AboutScreen, self).__init__(**kwargs)
+        Clock.schedule_once(lambda dt: self.load_about())
+
+    def load_about(self):
+        self.about_text_property = "" + \
+            "QrScan version: %s\n" % (__version__) + \
+            "Project source code and info available on GitHub at: \n" + \
+            "[color=00BFFF][ref=github]" + \
+            self.project_page_property + \
+            "[/ref][/color]"
 
 
 class QRScanScreen(Screen):
@@ -51,27 +98,9 @@ class QRScanScreen(Screen):
         qrfound_screen.data_property = symbol.data
 
 
-class QRFoundScreen(Screen):
+class QRFoundScreen(SubScreen):
 
     data_property = StringProperty()
-
-    def on_back(self):
-        self.manager.transition.direction = 'right'
-        self.manager.current = 'qrscan_screen'
-
-    def on_enter(self):
-        """
-        Loads the toolbar back button.
-        """
-        app = App.get_running_app()
-        app.root.ids.toolbar_id.load_back_button(self.on_back)
-
-    def on_leave(self):
-        """
-        Loads the toolbar default button.
-        """
-        app = App.get_running_app()
-        app.root.ids.toolbar_id.load_default_buttons()
 
     def copy_to_clipboard(self):
         """
