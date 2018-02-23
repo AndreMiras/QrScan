@@ -11,6 +11,9 @@ from version import __version__
 
 
 class CustomToolbar(Toolbar):
+    """
+    Toolbar with helper method for loading default/back buttons.
+    """
 
     def __init__(self, **kwargs):
         super(CustomToolbar, self).__init__(**kwargs)
@@ -24,7 +27,6 @@ class CustomToolbar(Toolbar):
             ['dots-vertical', lambda x: app.root.toggle_nav_drawer()]]
 
     def load_back_button(self, function):
-        # lambda x: app.root.toggle_nav_drawer()
         self.left_action_items = [['arrow-left', lambda x: function()]]
 
 
@@ -53,6 +55,7 @@ class SubScreen(Screen):
 
 
 class AboutScreen(SubScreen):
+
     project_page_property = StringProperty(
         "https://github.com/AndreMiras/QrScan")
     about_text_property = StringProperty()
@@ -64,7 +67,7 @@ class AboutScreen(SubScreen):
     def load_about(self):
         self.about_text_property = "" + \
             "QrScan version: %s\n" % (__version__) + \
-            "Project source code and info available on GitHub at: \n" + \
+            "Project source code and info available on GitHub at:\n" + \
             "[color=00BFFF][ref=github]" + \
             self.project_page_property + \
             "[/ref][/color]"
