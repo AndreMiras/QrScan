@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# vim swap
+*.swp
+
+# Buildozer files
+.buildozer/
