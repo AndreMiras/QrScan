@@ -54,6 +54,7 @@ garden_requirements = xcamera, zbarcam
 
 # (str) Presplash of the application
 #presplash.filename = %(source.dir)s/data/presplash.png
+presplash.filename = docs/images/icon.png
 
 # (str) Icon of the application
 #icon.filename = %(source.dir)s/data/icon.png
