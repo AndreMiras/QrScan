@@ -102,3 +102,6 @@ ENV/
 
 # vim swap
 *.swp
+
+# Buildozer files
+.buildozer/
