@@ -113,7 +113,11 @@ class QRFoundScreen(SubScreen):
 
 
 class MainApp(App):
+
     theme_cls = ThemeManager()
+
+    def build(self):
+        self.icon = "docs/images/icon.png"
 
 
 if __name__ == '__main__':
