@@ -43,6 +43,7 @@ requirements =
     libiconv,
     libzbar,
     zbar,
+    decorator,
     validators
 
 # (str) Custom source folders for requirements
