@@ -1,5 +1,11 @@
 # Change Log
 
+## [v20180224]
+
+  - Added Android splash screen, refs #5
+  - Added application icon, refs #6
+  - Partial code type detection, refs #4
+
 ## [v20180223]
 
   - Initial release

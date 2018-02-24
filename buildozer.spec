@@ -38,11 +38,13 @@ version.filename = %(source.dir)s/version.py
 # comma seperated e.g. requirements = sqlite3,kivy
 requirements =
     kivy,
+    https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6,
     pil,
     libiconv,
     libzbar,
     zbar,
-    https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6
+    decorator,
+    validators
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -54,9 +56,11 @@ garden_requirements = xcamera, zbarcam
 
 # (str) Presplash of the application
 #presplash.filename = %(source.dir)s/data/presplash.png
+presplash.filename = docs/images/icon.png
 
 # (str) Icon of the application
 #icon.filename = %(source.dir)s/data/icon.png
+icon.filename = docs/images/icon.png
 
 # (str) Supported orientation (one of landscape, portrait or all)
 orientation = portrait

@@ -1,13 +1,37 @@
 #!/usr/bin/env python
+from __future__ import print_function, unicode_literals
+
+import validators
 from kivy.app import App
 from kivy.clock import Clock
 from kivy.core.clipboard import Clipboard
 from kivy.properties import StringProperty
 from kivy.uix.screenmanager import Screen
+from kivymd.icon_definitions import md_icons
 from kivymd.theming import ThemeManager
 from kivymd.toolbar import Toolbar
 
 from version import __version__
+
+
+class CodeType(object):
+    TEXT = 0
+    URL = 1
+    CONTACT = 2
+
+    @classmethod
+    def from_data(cls, data):
+        """
+        Returns detected code type from input data.
+        """
+        code_type = cls.TEXT
+        if validators.url(data):
+            code_type = cls.URL
+        elif data.startswith('BEGIN:VCARD'):
+            code_type = cls.CONTACT
+        else:
+            code_type = cls.TEXT
+        return code_type
 
 
 class CustomToolbar(Toolbar):
@@ -104,6 +128,36 @@ class QRScanScreen(Screen):
 class QRFoundScreen(SubScreen):
 
     data_property = StringProperty()
+    title_property = StringProperty()
+    icon_property = StringProperty()
+
+    def __init__(self, **kwargs):
+        super(QRFoundScreen, self).__init__(**kwargs)
+        self._code_type = CodeType.TEXT
+        self.map_dict = {
+            CodeType.TEXT: ('Text', 'comment-text'),
+            CodeType.URL: ('URL', 'link'),
+            CodeType.CONTACT: ('Contact', 'account'),
+        }
+
+    def on_data_property(self, instance, value):
+        """
+        Updates `icon_property` and `title_property`.
+        """
+        self._code_type = CodeType.from_data(value)
+        self.icon_property = self.icon()
+        self.title_property = self.title()
+
+    @property
+    def code_type(self):
+        return self._code_type
+
+    def title(self):
+        return self.map_dict[self.code_type][0]
+
+    def icon(self):
+        icon_name = self.map_dict[self.code_type][1]
+        return "{}".format(md_icons[icon_name])
 
     def copy_to_clipboard(self):
         """
@@ -113,7 +167,11 @@ class QRFoundScreen(SubScreen):
 
 
 class MainApp(App):
+
     theme_cls = ThemeManager()
+
+    def build(self):
+        self.icon = "docs/images/icon.png"
 
 
 if __name__ == '__main__':

@@ -27,6 +27,21 @@
 <QRFoundScreen>:
     BoxLayout:
         orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: self.minimum_height
+            MDLabel:
+                text: root.icon_property
+                font_style: 'Icon'
+                size_hint: None, None
+                width: self.texture_size[0]
+                height: self.texture_size[1] + dp(4)
+            MDLabel:
+                text: root.title_property
+                font_style: 'Title'
+                size_hint_y: None
+                height: self.texture_size[1] + dp(4)
         MDTextField:
             text: root.data_property
             readonly: True
