@@ -4,7 +4,8 @@ Cython==0.26
 # is fixed by installing kivy master
 # https://github.com/kivy/kivy/archive/27e3b90eae2a0155b22a435f1b6f65c913519db6.zip
 Kivy==1.10.0
+https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6
 zbar==0.10
 Pillow==5.0.0
 numpy==1.14.0
-https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6
+validators==0.12.1
