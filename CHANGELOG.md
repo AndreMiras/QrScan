@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [v20180224]
 
   - Added Android splash screen, refs #5
   - Added application icon, refs #6
