@@ -3,6 +3,7 @@
 ## [Unreleased]
 
   - Added Sentry support, refs #7
+  - Fixed decode error, refs #10
 
 ## [v20180224]
 

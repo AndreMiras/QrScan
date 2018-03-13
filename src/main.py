@@ -12,10 +12,10 @@ from kivy.utils import platform
 from kivymd.icon_definitions import md_icons
 from kivymd.theming import ThemeManager
 from kivymd.toolbar import Toolbar
-
 from raven import Client
 from raven.conf import setup_logging
 from raven.handlers.logging import SentryHandler
+
 from version import __version__
 
 
@@ -127,7 +127,8 @@ class QRScanScreen(Screen):
         self.manager.current = 'qrfound_screen'
         qrfound_screen = self.manager.current_screen
         symbol = symbols[0]
-        qrfound_screen.data_property = symbol.data
+        data = symbol.data.decode('utf8')
+        qrfound_screen.data_property = data
 
 
 class QRFoundScreen(SubScreen):
