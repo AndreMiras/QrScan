@@ -9,3 +9,4 @@ zbar==0.10
 Pillow==5.0.0
 numpy==1.14.0
 validators==0.12.1
+raven==6.6.0

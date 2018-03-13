@@ -1,5 +1,9 @@
 # Change Log
 
+## [Unreleased]
+
+  - Added Sentry support, refs #7
+
 ## [v20180224]
 
   - Added Android splash screen, refs #5
