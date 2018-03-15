@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [v20180315]
 
   - Added Sentry support, refs #7
   - Fixed decode error, refs #10
