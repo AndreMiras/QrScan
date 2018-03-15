@@ -38,13 +38,18 @@ version.filename = %(source.dir)s/version.py
 # comma seperated e.g. requirements = sqlite3,kivy
 requirements =
     kivy,
+    android,
+    setuptools,
+    openssl,
     https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6,
     pil,
     libiconv,
     libzbar,
     zbar,
     decorator,
-    validators
+    validators,
+    contextlib2,
+    raven
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes

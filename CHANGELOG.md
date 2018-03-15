@@ -1,5 +1,10 @@
 # Change Log
 
+## [v20180315]
+
+  - Added Sentry support, refs #7
+  - Fixed decode error, refs #10
+
 ## [v20180224]
 
   - Added Android splash screen, refs #5
