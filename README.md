@@ -27,6 +27,11 @@ buildozer android debug deploy run logcat
 buildozer android adb -- logcat
 ```
 
+## Tests
+```
+python -m unittest discover --start-directory=src/
+```
+
 
 ## Credits
 
