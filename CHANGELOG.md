@@ -1,5 +1,10 @@
 # Change Log
 
+## [Unreleased]
+
+  - Setup tox and unit tests, refs #8
+  - Simplify Linux install via Makefile, refs #11
+
 ## [v20180315]
 
   - Added Sentry support, refs #7
