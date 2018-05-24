@@ -3,6 +3,7 @@
 ## [Unreleased]
 
   - Setup tox and unit tests, refs #8
+  - Setup continuous integration, refs #9
   - Simplify Linux install via Makefile, refs #11
 
 ## [v20180315]
