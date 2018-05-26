@@ -1,9 +1,12 @@
 # QrScan
-QR Code &amp; Barcode scanner cross-platform application
 
 [![Build Status](https://secure.travis-ci.org/AndreMiras/QrScan.png?branch=develop)](http://travis-ci.org/AndreMiras/QrScan)
 
 <a href="https://play.google.com/store/apps/details?id=com.github.andremiras.qrscan"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" alt="Play Store" width="20%"></a>
+
+QR Code &amp; Barcode scanner cross-platform application
+
+<img src="https://raw.githubusercontent.com/AndreMiras/QrScan/develop/docs/images/play_feature_graphic.png" alt="Feature graphics">
 
 ## Install
 ```
