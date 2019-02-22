@@ -45,7 +45,8 @@ requirements =
     pil,
     libiconv,
     libzbar,
-    zbar,
+    zbarlight>=2.1,
+    https://github.com/kivy-garden/garden.zbarcam/archive/20190223.tar.gz,
     decorator,
     validators,
     contextlib2,
@@ -57,7 +58,7 @@ requirements =
 
 # (list) Garden requirements
 #garden_requirements =
-garden_requirements = xcamera, zbarcam
+garden_requirements = xcamera
 
 # (str) Presplash of the application
 #presplash.filename = %(source.dir)s/data/presplash.png
