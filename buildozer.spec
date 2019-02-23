@@ -38,7 +38,7 @@ version.filename = %(source.dir)s/version.py
 # comma seperated e.g. requirements = sqlite3,kivy
 requirements =
     python2,
-    kivy==1.10.1,
+    kivy==90c86f8,
     android,
     setuptools,
     openssl,
