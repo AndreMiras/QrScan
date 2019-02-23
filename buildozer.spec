@@ -43,7 +43,7 @@ requirements =
     setuptools,
     openssl,
     https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6,
-    pil,
+    Pillow,
     libiconv,
     libzbar,
     zbarlight==2.2,
