@@ -37,7 +37,8 @@ version.filename = %(source.dir)s/version.py
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
 requirements =
-    kivy,
+    python2,
+    kivy==1.10.1,
     android,
     setuptools,
     openssl,
@@ -45,7 +46,8 @@ requirements =
     pil,
     libiconv,
     libzbar,
-    zbar,
+    zbarlight==2.2,
+    https://github.com/kivy-garden/garden.zbarcam/archive/20190223.tar.gz,
     decorator,
     validators,
     contextlib2,
@@ -57,7 +59,7 @@ requirements =
 
 # (list) Garden requirements
 #garden_requirements =
-garden_requirements = xcamera, zbarcam
+garden_requirements = xcamera
 
 # (str) Presplash of the application
 #presplash.filename = %(source.dir)s/data/presplash.png
@@ -101,20 +103,22 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-#android.permissions = INTERNET
 android.permissions = CAMERA
 
-# (int) Android API to use
-#android.api = 19
+# (int) Target Android API, should be as high as possible.
+android.api = 27
 
-# (int) Minimum API required
-#android.minapi = 9
+# (int) Minimum API your APK will support.
+android.minapi = 21
 
 # (int) Android SDK version to use
-#android.sdk = 20
+android.sdk = 20
 
 # (str) Android NDK version to use
-#android.ndk = 9c
+android.ndk = 17c
+
+# (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
+android.ndk_api = 21
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
@@ -132,6 +136,12 @@ android.permissions = CAMERA
 # This can be useful to avoid excess Internet downloads or save time
 # when an update is due and you just want to test/build your package
 # android.skip_update = False
+
+# (bool) If True, then automatically accept SDK license
+# agreements. This is intended for automation only. If set to False,
+# the default, you will be shown the license when first running
+# buildozer.
+android.accept_sdk_license = True
 
 # (str) Android entry point, default is ok for Kivy-based app
 #android.entrypoint = org.renpy.android.PythonActivity

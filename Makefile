@@ -16,7 +16,6 @@ virtualenv:
 	$(PIP) install Cython==0.26.1
 	$(PIP) install -r requirements.txt
 	$(GARDEN) install xcamera
-	$(GARDEN) install zbarcam
 
 system_dependencies:
 ifeq ($(OS), Ubuntu)
