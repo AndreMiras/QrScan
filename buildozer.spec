@@ -39,7 +39,7 @@ version.filename = %(source.dir)s/version.py
 requirements =
     android,
     decorator,
-    https://github.com/kivy-garden/garden.zbarcam/archive/c97e49e.zip,
+    https://github.com/kivy-garden/garden.zbarcam/archive/20190303.tar.gz,
     https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6,
     kivy==5fc5385,
     libiconv,
