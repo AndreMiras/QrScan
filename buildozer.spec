@@ -22,7 +22,7 @@ source.include_exts = py,png,jpg,kv,atlas
 #source.exclude_exts = spec
 
 # (list) List of directory to exclude (let empty to not exclude anything)
-#source.exclude_dirs = tests, bin
+source.exclude_dirs = tests, bin
 
 # (list) List of exclusions using pattern matching
 #source.exclude_patterns = license,images/*/*.jpg
@@ -37,21 +37,18 @@ version.filename = %(source.dir)s/version.py
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
 requirements =
-    python2,
-    kivy==90c86f8,
     android,
-    setuptools,
-    openssl,
+    decorator,
+    https://github.com/kivy-garden/garden.zbarcam/archive/c97e49e.zip,
     https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6,
-    Pillow,
+    kivy==5fc5385,
     libiconv,
     libzbar,
-    zbarlight==2.2,
-    https://github.com/kivy-garden/garden.zbarcam/archive/20190223.tar.gz,
-    decorator,
-    validators,
-    contextlib2,
-    raven
+    Pillow==5.2.0,
+    python3,
+    pyzbar==0.1.8,
+    raven==6.9.0,
+    validators
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -62,11 +59,9 @@ requirements =
 garden_requirements = xcamera
 
 # (str) Presplash of the application
-#presplash.filename = %(source.dir)s/data/presplash.png
 presplash.filename = docs/images/icon.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
 icon.filename = docs/images/icon.png
 
 # (str) Supported orientation (one of landscape, portrait or all)
@@ -174,7 +169,7 @@ android.accept_sdk_license = True
 #android.gradle_dependencies =
 
 # (str) python-for-android branch to use, defaults to master
-#p4a.branch = stable
+p4a.branch = master
 
 # (str) OUYA Console category. Should be one of GAME or APP
 # If you leave this blank, OUYA support will not be enabled
