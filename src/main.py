@@ -111,10 +111,10 @@ class QRScanScreen(Screen):
 
     def _after_init(self, dt):
         """
-        Binds `ZBarCam.on_codes()` event.
+        Binds `ZBarCam.on_symbols()` event.
         """
         zbarcam = self.ids.zbarcam_id
-        zbarcam.bind(codes=self.on_codes)
+        zbarcam.bind(symbols=self.on_symbols)
 
     @staticmethod
     def check_request_permission():
@@ -129,19 +129,19 @@ class QRScanScreen(Screen):
         if not check_permission(permission):
             request_permission(permission)
 
-    def on_codes(self, zbarcam, codes):
+    def on_symbols(self, zbarcam, symbols):
         """
-        Loads the first code data to the `QRFoundScreen.data_property`.
+        Loads the first symbol data to the `QRFoundScreen.data_property`.
         """
-        # going from codes found to no codes found state would also
-        # trigger `on_codes`
-        if not codes:
+        # going from symbols found to no symbols found state would also
+        # trigger `on_symbols`
+        if not symbols:
             return
         self.manager.transition.direction = 'left'
         self.manager.current = 'qrfound_screen'
         qrfound_screen = self.manager.current_screen
-        code = codes[0]
-        data = code.decode('utf8')
+        symbol = symbols[0]
+        data = symbol.data.decode('utf8')
         qrfound_screen.data_property = data
 
 
