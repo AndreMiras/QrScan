@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [v20190303]
 
   - Setup tox and unit tests, refs #8
   - Setup continuous integration, refs #9
