@@ -1,0 +1,12 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+install:
+  - docker build --tag=qrscan .
+
+script:
+  - docker run qrscan /bin/sh -c 'make test'

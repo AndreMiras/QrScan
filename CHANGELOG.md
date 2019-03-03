@@ -1,5 +1,14 @@
 # Change Log
 
+## [v20190303]
+
+  - Setup tox and unit tests, refs #8
+  - Setup continuous integration, refs #9
+  - Simplify Linux install via Makefile, refs #11
+  - Runtime permission check, refs #15
+  - Migrate Linux to Python3, refs #16
+  - Migrate Android to Python3, refs #17
+
 ## [v20180315]
 
   - Added Sentry support, refs #7

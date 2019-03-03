@@ -18,11 +18,11 @@ class CodeTypeTestCase(unittest.TestCase):
         Verifies we can decode special characters when already specified
         as unicode, refs #10.
         """
-        # not unicode
-        data = b"Sábado"
+        # "Sábado" not unicode
+        data = b"S\xc3\xa1bado"
         with self.assertRaises(UnicodeDecodeError):
             code_type = CodeType.from_data(data)
         # unicode
-        data = b"Sábado".decode('utf8')
+        data = data.decode('utf8')
         code_type = CodeType.from_data(data)
         self.assertEqual(code_type, CodeType.TEXT)

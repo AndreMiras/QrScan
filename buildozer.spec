@@ -22,7 +22,7 @@ source.include_exts = py,png,jpg,kv,atlas
 #source.exclude_exts = spec
 
 # (list) List of directory to exclude (let empty to not exclude anything)
-#source.exclude_dirs = tests, bin
+source.exclude_dirs = tests, bin
 
 # (list) List of exclusions using pattern matching
 #source.exclude_patterns = license,images/*/*.jpg
@@ -37,19 +37,18 @@ version.filename = %(source.dir)s/version.py
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
 requirements =
-    kivy,
     android,
-    setuptools,
-    openssl,
+    decorator,
+    https://github.com/kivy-garden/garden.zbarcam/archive/20190303.tar.gz,
     https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6,
-    pil,
+    kivy==5fc5385,
     libiconv,
     libzbar,
-    zbar,
-    decorator,
-    validators,
-    contextlib2,
-    raven
+    Pillow==5.2.0,
+    python3,
+    pyzbar==0.1.8,
+    raven==6.9.0,
+    validators
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -57,14 +56,12 @@ requirements =
 
 # (list) Garden requirements
 #garden_requirements =
-garden_requirements = xcamera, zbarcam
+garden_requirements = xcamera
 
 # (str) Presplash of the application
-#presplash.filename = %(source.dir)s/data/presplash.png
 presplash.filename = docs/images/icon.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
 icon.filename = docs/images/icon.png
 
 # (str) Supported orientation (one of landscape, portrait or all)
@@ -101,20 +98,22 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-#android.permissions = INTERNET
 android.permissions = CAMERA
 
-# (int) Android API to use
-#android.api = 19
+# (int) Target Android API, should be as high as possible.
+android.api = 27
 
-# (int) Minimum API required
-#android.minapi = 9
+# (int) Minimum API your APK will support.
+android.minapi = 21
 
 # (int) Android SDK version to use
-#android.sdk = 20
+android.sdk = 20
 
 # (str) Android NDK version to use
-#android.ndk = 9c
+android.ndk = 17c
+
+# (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
+android.ndk_api = 21
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
@@ -132,6 +131,12 @@ android.permissions = CAMERA
 # This can be useful to avoid excess Internet downloads or save time
 # when an update is due and you just want to test/build your package
 # android.skip_update = False
+
+# (bool) If True, then automatically accept SDK license
+# agreements. This is intended for automation only. If set to False,
+# the default, you will be shown the license when first running
+# buildozer.
+android.accept_sdk_license = True
 
 # (str) Android entry point, default is ok for Kivy-based app
 #android.entrypoint = org.renpy.android.PythonActivity
@@ -164,7 +169,7 @@ android.permissions = CAMERA
 #android.gradle_dependencies =
 
 # (str) python-for-android branch to use, defaults to master
-#p4a.branch = stable
+p4a.branch = master
 
 # (str) OUYA Console category. Should be one of GAME or APP
 # If you leave this blank, OUYA support will not be enabled
