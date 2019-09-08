@@ -2,8 +2,9 @@
 
 ## [Unreleased]
 
-  - Bumped to `zbarcam==2019.907`, refs #20
   - Improved `Makefile`, ditched `tox`, refs #12
+  - Non-root Docker user, refs #18
+  - Bumped to `zbarcam==2019.907`, refs #20
 
 ## [v20190303]
 
