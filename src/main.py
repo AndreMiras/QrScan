@@ -105,7 +105,6 @@ class AboutScreen(SubScreen):
 class QRScanScreen(Screen):
 
     def __init__(self, **kwargs):
-        self.check_request_permission()
         super().__init__(**kwargs)
         Clock.schedule_once(self._after_init)
 
@@ -115,19 +114,6 @@ class QRScanScreen(Screen):
         """
         zbarcam = self.ids.zbarcam_id
         zbarcam.bind(symbols=self.on_symbols)
-
-    @staticmethod
-    def check_request_permission():
-        """
-        Android runtime storage permission check.
-        """
-        if platform != "android":
-            return
-        from android.permissions import (
-            Permission, request_permission, check_permission)
-        permission = Permission.CAMERA
-        if not check_permission(permission):
-            request_permission(permission)
 
     def on_symbols(self, zbarcam, symbols):
         """
