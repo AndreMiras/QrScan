@@ -32,9 +32,13 @@ ifeq ($(OS), Ubuntu)
 	sudo apt install --yes --no-install-recommends $(SYSTEM_DEPENDENCIES)
 endif
 
-clean:
-	py3clean src/
-	find src/ -type d -name "*.egg-info" -exec rm -r {} +
+run/linux: virtualenv
+	# The `--debug` flag is required if you want to see errors printed in your console.
+	# Otherwise the exception will be only sent to Sentry.
+	# $(PYTHON) src/qrscan/main.py --debug
+	$(PYTHON) src/main.py --debug
+
+run: run/linux
 
 isort-check: virtualenv-test
 	$(ISORT) --check-only --recursive --diff $(SOURCES)
@@ -59,3 +63,8 @@ release/build: release/clean
 
 release/upload:
 	$(TWINE) upload dist/*
+
+clean: release/clean
+	py3clean src/
+	find src/ -type d -name "__pycache__" -exec rm -r {} +
+	find src/ -type d -name "*.egg-info" -exec rm -r {} +

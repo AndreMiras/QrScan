@@ -19,10 +19,8 @@ Also [compile & install OpenCV](https://github.com/AndreMiras/garden.zbarcam/blo
 
 ### Linux
 ```sh
-./src/main.py --debug
+make run
 ```
-The `--debug` flag is required if you want to see errors printed in your console.
-Otherwise the exception will be only sent to Sentry.
 
 ### Android
 Build, deploy and run on Android using buildozer:
