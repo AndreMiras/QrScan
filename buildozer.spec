@@ -39,7 +39,6 @@ version.filename = %(source.dir)s/version.py
 requirements =
     android,
     decorator,
-    https://github.com/kivy-garden/garden.zbarcam/archive/20190303.tar.gz,
     https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6,
     kivy==5fc5385,
     libiconv,
@@ -48,7 +47,8 @@ requirements =
     python3,
     pyzbar==0.1.8,
     raven==6.9.0,
-    validators
+    validators,
+    zbarcam==2019.907
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -98,7 +98,7 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-android.permissions = CAMERA
+android.permissions = CAMERA, INTERNET
 
 # (int) Target Android API, should be as high as possible.
 android.api = 27

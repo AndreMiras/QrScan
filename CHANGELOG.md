@@ -1,5 +1,9 @@
 # Change Log
 
+## [Unreleased]
+
+  - Bumps to `zbarcam==2019.907`, refs #20
+
 ## [v20190303]
 
   - Setup tox and unit tests, refs #8
