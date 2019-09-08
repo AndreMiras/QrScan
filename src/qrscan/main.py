@@ -16,7 +16,7 @@ from raven import Client
 from raven.conf import setup_logging
 from raven.handlers.logging import SentryHandler
 
-from version import __version__
+from .version import __version__
 
 
 class CodeType(object):
@@ -227,7 +227,7 @@ class MainApp(App):
         self.icon = "docs/images/icon.png"
 
 
-if __name__ == '__main__':
+def main():
     # when the -d/--debug flag is set, Kivy sets log level to debug
     level = Logger.getEffectiveLevel()
     in_debug = level == LOG_LEVELS.get('debug')
@@ -240,3 +240,7 @@ if __name__ == '__main__':
                 'Errors will be sent to Sentry, run with "--debug" if you '
                 'are a developper and want to the error in the shell.')
         client.captureException()
+
+
+if __name__ == '__main__':
+    main()

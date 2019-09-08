@@ -3,7 +3,7 @@ from __future__ import print_function, unicode_literals
 
 import unittest
 
-from main import CodeType
+from qrscan.main import CodeType
 
 
 class CodeTypeTestCase(unittest.TestCase):
