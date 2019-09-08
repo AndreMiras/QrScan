@@ -1,9 +1,9 @@
-pyzbar==0.1.8
 # 5fc5385 adds opencv 4 support
 https://github.com/kivy/kivy/archive/5fc5385.zip#egg=kivy
-https://github.com/AndreMiras/KivyMD/archive/20170825.tar.gz
-Pillow==5.2.0
+https://github.com/AndreMiras/KivyMD/archive/20170825.tar.gz#egg=kivymd
 numpy==1.14.0
-validators==0.12.1
+Pillow==5.2.0
+pyzbar==0.1.8
 raven==6.9.0
+validators==0.12.1
 zbarcam==2019.907
