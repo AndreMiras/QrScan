@@ -45,7 +45,7 @@ class CustomToolbar(Toolbar):
     """
 
     def __init__(self, **kwargs):
-        super(CustomToolbar, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         Clock.schedule_once(self.load_default_buttons)
 
     def load_default_buttons(self, dt=None):
@@ -90,7 +90,7 @@ class AboutScreen(SubScreen):
     about_text_property = StringProperty()
 
     def __init__(self, **kwargs):
-        super(AboutScreen, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         Clock.schedule_once(lambda dt: self.load_about())
 
     def load_about(self):
@@ -106,7 +106,7 @@ class QRScanScreen(Screen):
 
     def __init__(self, **kwargs):
         self.check_request_permission()
-        super(QRScanScreen, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         Clock.schedule_once(self._after_init)
 
     def _after_init(self, dt):
@@ -152,7 +152,7 @@ class QRFoundScreen(SubScreen):
     icon_property = StringProperty()
 
     def __init__(self, **kwargs):
-        super(QRFoundScreen, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self._code_type = CodeType.TEXT
         self.map_dict = {
             CodeType.TEXT: ('Text', 'comment-text'),
