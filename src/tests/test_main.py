@@ -20,7 +20,7 @@ class CodeTypeTestCase(unittest.TestCase):
         """
         # "Sábado" not unicode
         data = b"S\xc3\xa1bado"
-        with self.assertRaises(UnicodeDecodeError):
+        with self.assertRaises(TypeError):
             code_type = CodeType.from_data(data)
         # unicode
         data = data.decode('utf8')
