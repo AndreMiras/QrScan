@@ -3,7 +3,7 @@ from __future__ import print_function, unicode_literals
 
 import unittest
 
-from main import CodeType
+from qrscan.main import CodeType
 
 
 class CodeTypeTestCase(unittest.TestCase):
@@ -20,7 +20,7 @@ class CodeTypeTestCase(unittest.TestCase):
         """
         # "Sábado" not unicode
         data = b"S\xc3\xa1bado"
-        with self.assertRaises(UnicodeDecodeError):
+        with self.assertRaises(TypeError):
             code_type = CodeType.from_data(data)
         # unicode
         data = data.decode('utf8')

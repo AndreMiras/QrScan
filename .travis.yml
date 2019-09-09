@@ -5,8 +5,19 @@ language: generic
 services:
   - docker
 
+env:
+  global:
+    - DISPLAY=:99.0
+
+before_install:
+  - sudo apt update -qq > /dev/null
+  - sudo apt install --yes --no-install-recommends xvfb
+
 install:
   - docker build --tag=qrscan .
 
+before_script:
+  - sh -e /etc/init.d/xvfb start
+
 script:
-  - docker run qrscan /bin/sh -c 'make test'
+  - docker run -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix qrscan /bin/sh -c 'make test'

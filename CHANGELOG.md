@@ -1,5 +1,16 @@
 # Change Log
 
+## [v20190909]
+
+  - Use `opencv-python` dep from PyPI
+  - Improved `Makefile`, ditched `tox`, refs #12
+  - Non-root Docker user, refs #18
+  - Publish to PyPI, refs #22
+  - Bumped to `zbarcam==2019.909`, refs #20, #24
+  - Handle camera permission gracefull, refs #20
+  - Migrate to `Kivy==1.11.1`, refs #24
+  - Describe key features, refs #23
+
 ## [v20190303]
 
   - Setup tox and unit tests, refs #8

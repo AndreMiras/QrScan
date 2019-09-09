@@ -7,6 +7,10 @@
 #   docker run -it --rm qrscan
 FROM ubuntu:18.04
 
+ENV USER="user"
+ENV HOME_DIR="/home/${USER}"
+ENV WORK_DIR="${HOME_DIR}/app"
+
 # configure locale
 RUN apt update -qq > /dev/null && apt install --yes --no-install-recommends \
     locales && \
@@ -32,9 +36,17 @@ RUN apt install --yes --no-install-recommends \
     python3 \
     python3-dev \
     sudo \
-    tox \
     virtualenv
 
-WORKDIR /app
-COPY . /app
+# prepare non root env
+RUN useradd --create-home --shell /bin/bash ${USER}
+# with sudo access and no password
+RUN usermod -append --groups sudo ${USER}
+RUN echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+WORKDIR ${WORK_DIR}
+COPY . ${WORK_DIR}
+RUN chown -R ${USER}:${USER} ${WORK_DIR}
+USER ${USER}
+
 RUN make virtualenv

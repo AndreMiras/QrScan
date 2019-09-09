@@ -8,34 +8,33 @@ QR Code &amp; Barcode scanner cross-platform application
 
 <img src="https://raw.githubusercontent.com/AndreMiras/QrScan/develop/docs/images/play_feature_graphic.png" alt="Feature graphics">
 
+## Key features
+* All QR Code and Barcode supported
+* Cross-platform (Windows, Linux, macOS, Android, iOS)
+
 ## Install
-```
+```sh
 make
 ```
-Also [compile & install OpenCV](https://github.com/AndreMiras/garden.zbarcam/blob/develop/OpenCV.md).
-
 
 ## Run
 
 ### Linux
+```sh
+make run
 ```
-./src/main.py --debug
-```
-The `--debug` flag is required if you want to see errors printed in your console.
-Otherwise the exception will be only sent to Sentry.
 
 ### Android
 Build, deploy and run on Android using buildozer:
-```
+```sh
 buildozer android debug deploy run logcat
 buildozer android adb -- logcat
 ```
 
 ## Tests
+```sh
+make test
 ```
-python -m unittest discover --start-directory=src/
-```
-
 
 ## Credits
 
