@@ -12,8 +12,6 @@ QR Code &amp; Barcode scanner cross-platform application
 ```sh
 make
 ```
-Also [compile & install OpenCV](https://github.com/AndreMiras/garden.zbarcam/blob/develop/OpenCV.md).
-
 
 ## Run
 
@@ -33,7 +31,6 @@ buildozer android adb -- logcat
 ```sh
 make test
 ```
-
 
 ## Credits
 

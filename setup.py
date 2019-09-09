@@ -33,6 +33,7 @@ setup_params = {
     'install_requires': (
         ('KivyMD @ https://github.com/AndreMiras/KivyMD'
          '/archive/20181106.tar.gz#egg=KivyMD-20181106'),
+        'opencv-python>=4',
         'raven',
         'validators',
         'zbarcam',

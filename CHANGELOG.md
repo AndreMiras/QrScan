@@ -7,6 +7,7 @@
   - Bumped to `zbarcam==2019.907`, refs #20
   - Handle camera permission gracefull, refs #20
   - Migrate to `Kivy==1.11.1` & `zbarcam==2019.909`, refs #24
+  - Use `opencv-python` dep from PyPI
 
 ## [v20190303]
 

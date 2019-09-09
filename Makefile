@@ -68,3 +68,8 @@ clean: release/clean
 	py3clean src/
 	find src/ -type d -name "__pycache__" -exec rm -r {} +
 	find src/ -type d -name "*.egg-info" -exec rm -r {} +
+
+clean/venv: clean
+	rm -rf $(VENV_NAME)
+
+clean/all: clean clean/venv
