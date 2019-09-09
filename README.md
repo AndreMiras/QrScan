@@ -8,6 +8,10 @@ QR Code &amp; Barcode scanner cross-platform application
 
 <img src="https://raw.githubusercontent.com/AndreMiras/QrScan/develop/docs/images/play_feature_graphic.png" alt="Feature graphics">
 
+## Key features
+* All QR Code and Barcode supported
+* Cross-platform (Windows, Linux, macOS, Android, iOS)
+
 ## Install
 ```sh
 make
