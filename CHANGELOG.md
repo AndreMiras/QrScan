@@ -1,5 +1,9 @@
 # Change Log
 
+## [v20190910]
+
+  - Use `kivy-garden.kivymd` from PyPI
+
 ## [v20190909]
 
   - Use `opencv-python` dep from PyPI
