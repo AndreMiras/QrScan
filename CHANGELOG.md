@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [v20190910]
 
   - Use `kivy-garden.kivymd` from PyPI
 
