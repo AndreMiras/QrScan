@@ -40,7 +40,7 @@ requirements =
     android,
     decorator,
     https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6,
-    kivy==5fc5385,
+    kivy==1.11.1,
     libiconv,
     libzbar,
     Pillow==5.2.0,
@@ -48,7 +48,7 @@ requirements =
     pyzbar==0.1.8,
     raven==6.9.0,
     validators,
-    zbarcam==2019.907
+    zbarcam==2019.909
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
