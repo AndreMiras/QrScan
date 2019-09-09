@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [v20190909]
 
   - Use `opencv-python` dep from PyPI
   - Improved `Makefile`, ditched `tox`, refs #12
