@@ -6,4 +6,4 @@ Pillow==5.2.0
 pyzbar==0.1.8
 raven==6.9.0
 validators==0.12.1
-zbarcam==2019.909
+zbarcam==2019.910

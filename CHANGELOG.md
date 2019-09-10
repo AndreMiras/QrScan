@@ -1,5 +1,10 @@
 # Change Log
 
+## [v20190911]
+
+  - Use `xcamera` from PyPI
+  - Bump to `zbarcam==2019.910`
+
 ## [v20190910]
 
   - Use `kivy-garden.kivymd` from PyPI
