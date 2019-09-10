@@ -41,14 +41,15 @@ requirements =
     decorator,
     kivy==1.11.1,
     kivy-garden.kivymd==2019.910,
+    kivy-garden.xcamera==2019.911,
+    kivy-garden.zbarcam==2019.910,
     libiconv,
     libzbar,
     Pillow==5.2.0,
     python3,
     pyzbar==0.1.8,
     raven==6.9.0,
-    validators,
-    zbarcam==2019.909
+    validators
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
