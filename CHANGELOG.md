@@ -1,5 +1,9 @@
 # Change Log
 
+## [Unreleased]
+
+  - Use `xcamera` from PyPI
+
 ## [v20190910]
 
   - Use `kivy-garden.kivymd` from PyPI

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 This is the file being picked up by `buildozer` as it's expecting a `main.py`
 in the source directory.

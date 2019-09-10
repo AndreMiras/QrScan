@@ -39,8 +39,8 @@ version.filename = %(source.dir)s/qrscan/version.py
 requirements =
     android,
     decorator,
-    https://gitlab.com/kivymd/KivyMD/repository/archive.zip?ref=19e587e6,
     kivy==1.11.1,
+    kivy-garden.kivymd==2019.910,
     libiconv,
     libzbar,
     Pillow==5.2.0,
@@ -56,7 +56,6 @@ requirements =
 
 # (list) Garden requirements
 #garden_requirements =
-garden_requirements = xcamera
 
 # (str) Presplash of the application
 presplash.filename = docs/images/icon.png
