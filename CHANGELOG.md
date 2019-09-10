@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [v20190911]
 
   - Use `xcamera` from PyPI
   - Bump to `zbarcam==2019.910`
