@@ -23,6 +23,14 @@ git push origin master:master
 git push --tags
 ```
 
+### Publish to PyPI
+```
+make release/build
+# check content
+tar -tvf dist/QrScan-*.tar.gz
+make release/upload
+```
+
 ## Android
 
 Useful links:
