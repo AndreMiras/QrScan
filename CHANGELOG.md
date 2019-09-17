@@ -1,5 +1,9 @@
 # Change Log
 
+## [Unreleased]
+
+  - Migrate to NDK 19b, refs #28
+
 ## [v20190911]
 
   - Use `xcamera` from PyPI

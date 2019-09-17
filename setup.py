@@ -30,6 +30,7 @@ setup_params = {
     'entry_points': {
         'console_scripts': ('qrscan=qrscan.main:main',),
     },
+    'python_requires': '>=3',
     'install_requires': (
         'kivy-garden.kivymd',
         'opencv-python>=4',
