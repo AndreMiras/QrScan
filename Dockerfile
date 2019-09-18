@@ -20,7 +20,7 @@ ENV LANG="en_US.UTF-8" \
     LC_ALL="en_US.UTF-8"
 
 # install system dependencies
-RUN apt install --yes --no-install-recommends \
+RUN apt update -qq > /dev/null && apt install --yes --no-install-recommends \
     build-essential \
     ccache \
     cmake \
@@ -28,13 +28,13 @@ RUN apt install --yes --no-install-recommends \
     libsdl2-image-dev \
     libsdl2-mixer-dev \
     libsdl2-ttf-dev \
-    libpython3.6-dev \
+    libpython3.7-dev \
     libzbar-dev \
     lsb-release \
     make \
     pkg-config \
-    python3 \
-    python3-dev \
+    python3.7 \
+    python3.7-dev \
     sudo \
     virtualenv
 

@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+  - Migrate to Python 3.7, refs #25
   - Migrate to NDK 19b, refs #28
 
 ## [v20190911]
