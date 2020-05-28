@@ -39,13 +39,13 @@ version.filename = %(source.dir)s/qrscan/version.py
 requirements =
     android,
     decorator,
-    kivy==1.11.1,
+    kivy==58e70b1,
     kivy-garden.kivymd==2019.910,
-    kivy-garden.xcamera==2019.911,
-    kivy-garden.zbarcam==2019.910,
+    kivy-garden.xcamera==2019.928,
+    kivy-garden.zbarcam==2020.524,
     libiconv,
     libzbar,
-    Pillow==5.2.0,
+    Pillow==7.0.0,
     python3,
     pyzbar==0.1.8,
     raven==6.9.0,
@@ -101,7 +101,7 @@ fullscreen = 0
 android.permissions = CAMERA, INTERNET
 
 # (int) Target Android API, should be as high as possible.
-android.api = 27
+android.api = 28
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
@@ -110,7 +110,7 @@ android.minapi = 21
 android.sdk = 20
 
 # (str) Android NDK version to use
-android.ndk = 17c
+android.ndk = 19b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 android.ndk_api = 21
@@ -169,7 +169,7 @@ android.accept_sdk_license = True
 #android.gradle_dependencies =
 
 # (str) python-for-android branch to use, defaults to master
-p4a.branch = master
+p4a.branch = v2020.04.29
 
 # (str) OUYA Console category. Should be one of GAME or APP
 # If you leave this blank, OUYA support will not be enabled
@@ -205,7 +205,16 @@ p4a.branch = master
 #android.copy_libs = 1
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86
+# android.arch = arm64-v8a
 android.arch = armeabi-v7a
+
+# (int) overrides automatic versionCode computation (used in build.gradle)
+# this is not the same as app version and should only be edited if you know what you're doing
+# android.numeric_version = 1
+# use MSB for arch (refs pythonforandroid/bootstraps/common/build/build.py):
+# {"x86_64": "9", "arm64-v8a": "8", "armeabi-v7a": "7", "x86": "6"}
+# android.numeric_version = 821202812
+android.numeric_version = 721202812
 
 #
 # Python for android (p4a) specific

@@ -1,33 +1,32 @@
-VENV_NAME=venv
-ACTIVATE_PATH=$(VENV_NAME)/bin/activate
-PIP=$(VENV_NAME)/bin/pip
-PYTHON=$(VENV_NAME)/bin/python
-ISORT=$(VENV_NAME)/bin/isort
-FLAKE8=$(VENV_NAME)/bin/flake8
+VIRTUAL_ENV ?= venv
+ACTIVATE_PATH=$(VIRTUAL_ENV)/bin/activate
+PIP=$(VIRTUAL_ENV)/bin/pip
+PYTHON=$(VIRTUAL_ENV)/bin/python
+ISORT=$(VIRTUAL_ENV)/bin/isort
+FLAKE8=$(VIRTUAL_ENV)/bin/flake8
 TWINE=`which twine`
 SOURCES=src/ setup.py
 SYSTEM_DEPENDENCIES= \
 	libzbar-dev \
 	virtualenv
-OS=$(shell lsb_release -si)
+PYTHON_VERSION=3.8
+PYTHON_WITH_VERSION=python$(PYTHON_VERSION)
 
 
 all: system_dependencies virtualenv
 
-venv:
-	virtualenv -p python3 venv
+$(VIRTUAL_ENV):
+	$(PYTHON_WITH_VERSION) -m venv $(VIRTUAL_ENV)
 
-virtualenv: venv
-	$(PIP) install Cython==0.26.1
+virtualenv: $(VIRTUAL_ENV)
+	$(PIP) install Cython==0.28.6
 	$(PIP) install -r requirements.txt
 
 virtualenv/test: virtualenv
 	$(PIP) install -r requirements/requirements-test.txt
 
 system_dependencies:
-ifeq ($(OS), Ubuntu)
-	sudo apt install --yes --no-install-recommends $(SYSTEM_DEPENDENCIES)
-endif
+	apt install --yes --no-install-recommends $(SYSTEM_DEPENDENCIES)
 
 run/linux: virtualenv
 	# The `--debug` flag is required if you want to see errors printed in your console.
@@ -67,6 +66,6 @@ clean: release/clean
 	find src/ -type d -name "*.egg-info" -exec rm -r {} +
 
 clean/venv: clean
-	rm -rf $(VENV_NAME)
+	rm -rf $(VIRTUAL_ENV)
 
 clean/all: clean clean/venv

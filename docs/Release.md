@@ -8,7 +8,7 @@ This is documenting the release process.
 Make sure the CHANGELOG.md is up to date and follows the http://keepachangelog.com guidelines.
 Start the release with git flow:
 ```
-git flow release start vYYYYMMDD
+git flow release start vYYYY.MMDD
 ```
 Now update the CHANGELOG.md `[Unreleased]` section to match the new release version.
 Also update the `__version__` string of the [version.py](/src/qrscan/version.py) file. Then commit and finish release.
@@ -21,6 +21,14 @@ Push everything, make sure tags are also pushed:
 git push
 git push origin master:master
 git push --tags
+```
+
+### Publish to PyPI
+```
+make release/build
+# check content
+tar -tvf dist/QrScan-*.tar.gz
+make release/upload
 ```
 
 ## Android
