@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased]
+## [v2020.0528]
 
   - Migrate to Python 3.7, refs #25
   - Migrate to NDK 19b, refs #28

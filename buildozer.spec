@@ -101,7 +101,7 @@ fullscreen = 0
 android.permissions = CAMERA, INTERNET
 
 # (int) Target Android API, should be as high as possible.
-android.api = 27
+android.api = 28
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
@@ -205,7 +205,16 @@ p4a.branch = v2020.04.29
 #android.copy_libs = 1
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86
+# android.arch = arm64-v8a
 android.arch = armeabi-v7a
+
+# (int) overrides automatic versionCode computation (used in build.gradle)
+# this is not the same as app version and should only be edited if you know what you're doing
+# android.numeric_version = 1
+# use MSB for arch (refs pythonforandroid/bootstraps/common/build/build.py):
+# {"x86_64": "9", "arm64-v8a": "8", "armeabi-v7a": "7", "x86": "6"}
+# android.numeric_version = 821202812
+android.numeric_version = 721202812
 
 #
 # Python for android (p4a) specific
