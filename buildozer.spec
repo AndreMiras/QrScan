@@ -39,13 +39,13 @@ version.filename = %(source.dir)s/qrscan/version.py
 requirements =
     android,
     decorator,
-    kivy==1.11.1,
+    kivy==58e70b1,
     kivy-garden.kivymd==2019.910,
-    kivy-garden.xcamera==2019.911,
-    kivy-garden.zbarcam==2019.910,
+    kivy-garden.xcamera==2019.928,
+    kivy-garden.zbarcam==2020.524,
     libiconv,
     libzbar,
-    Pillow==5.2.0,
+    Pillow==7.0.0,
     python3,
     pyzbar==0.1.8,
     raven==6.9.0,
@@ -169,7 +169,7 @@ android.accept_sdk_license = True
 #android.gradle_dependencies =
 
 # (str) python-for-android branch to use, defaults to master
-p4a.branch = develop
+p4a.branch = v2020.04.29
 
 # (str) OUYA Console category. Should be one of GAME or APP
 # If you leave this blank, OUYA support will not be enabled

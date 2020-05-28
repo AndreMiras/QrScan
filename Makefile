@@ -9,15 +9,14 @@ SOURCES=src/ setup.py
 SYSTEM_DEPENDENCIES= \
 	libzbar-dev \
 	virtualenv
-OS=$(shell lsb_release -si)
-PYTHON_VERSION=3.7
+PYTHON_VERSION=3.8
 PYTHON_WITH_VERSION=python$(PYTHON_VERSION)
 
 
 all: system_dependencies virtualenv
 
 $(VIRTUAL_ENV):
-	virtualenv -p $(PYTHON_WITH_VERSION) $(VIRTUAL_ENV)
+	$(PYTHON_WITH_VERSION) -m venv $(VIRTUAL_ENV)
 
 virtualenv: $(VIRTUAL_ENV)
 	$(PIP) install Cython==0.28.6
@@ -27,9 +26,7 @@ virtualenv/test: virtualenv
 	$(PIP) install -r requirements/requirements-test.txt
 
 system_dependencies:
-ifeq ($(OS), Ubuntu)
-	sudo apt install --yes --no-install-recommends $(SYSTEM_DEPENDENCIES)
-endif
+	apt install --yes --no-install-recommends $(SYSTEM_DEPENDENCIES)
 
 run/linux: virtualenv
 	# The `--debug` flag is required if you want to see errors printed in your console.

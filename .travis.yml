@@ -4,6 +4,7 @@ language: generic
 
 services:
   - docker
+  - xvfb
 
 env:
   global:
@@ -15,9 +16,6 @@ before_install:
 
 install:
   - docker build --tag=qrscan .
-
-before_script:
-  - sh -e /etc/init.d/xvfb start
 
 script:
   - docker run -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix qrscan /bin/sh -c 'make test'

@@ -5,14 +5,15 @@
 #   docker run qrscan /bin/sh -c 'make test'
 # Or for interactive shell:
 #   docker run -it --rm qrscan
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 ENV USER="user"
 ENV HOME_DIR="/home/${USER}"
 ENV WORK_DIR="${HOME_DIR}/app"
 
 # configure locale
-RUN apt update -qq > /dev/null && apt install --yes --no-install-recommends \
+RUN apt update -qq > /dev/null \
+    && DEBIAN_FRONTEND=noninteractive apt install -qq --yes --no-install-recommends \
     locales && \
     locale-gen en_US.UTF-8
 ENV LANG="en_US.UTF-8" \
@@ -20,7 +21,8 @@ ENV LANG="en_US.UTF-8" \
     LC_ALL="en_US.UTF-8"
 
 # install system dependencies
-RUN apt update -qq > /dev/null && apt install --yes --no-install-recommends \
+RUN apt update -qq > /dev/null \
+    && DEBIAN_FRONTEND=noninteractive apt install -qq --yes --no-install-recommends \
     build-essential \
     ccache \
     cmake \
@@ -28,13 +30,14 @@ RUN apt update -qq > /dev/null && apt install --yes --no-install-recommends \
     libsdl2-image-dev \
     libsdl2-mixer-dev \
     libsdl2-ttf-dev \
-    libpython3.7-dev \
+    libpython3.8-dev \
     libzbar-dev \
     lsb-release \
     make \
     pkg-config \
-    python3.7 \
-    python3.7-dev \
+    python3.8 \
+    python3.8-dev \
+    python3.8-venv \
     sudo \
     virtualenv
 
