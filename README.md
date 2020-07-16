@@ -3,7 +3,12 @@
 [![Build Status](https://secure.travis-ci.org/AndreMiras/QrScan.png?branch=develop)](http://travis-ci.org/AndreMiras/QrScan)
 [![PyPI version](https://badge.fury.io/py/QrScan.svg)](https://badge.fury.io/py/QrScan)
 
-<a href="https://play.google.com/store/apps/details?id=com.github.andremiras.qrscan"><img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/en_get.svg" alt="Play Store" width="20%"></a>
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/com.github.andremiras.qrscan/)
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
+     alt="Get it on Google Play"
+     height="80">](https://play.google.com/store/apps/details?id=com.github.andremiras.qrscan)
 
 QR Code &amp; Barcode scanner cross-platform application
 
