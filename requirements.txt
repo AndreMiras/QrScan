@@ -2,7 +2,7 @@ Kivy==2.0.0rc2
 kivy-garden.kivymd==2019.910
 numpy==1.18.1
 opencv-python==4.2.0.34
-Pillow==7.0.0
+Pillow==9.0.1
 pyzbar==0.1.8
 raven==6.9.0
 validators==0.12.1
