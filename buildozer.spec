@@ -39,7 +39,7 @@ version.filename = %(source.dir)s/qrscan/version.py
 requirements =
     android,
     decorator,
-    kivy==58e70b1,
+    kivy,
     kivy-garden.kivymd==2019.910,
     kivy-garden.xcamera==2019.928,
     kivy-garden.zbarcam==2020.524,
