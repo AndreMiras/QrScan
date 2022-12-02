@@ -102,13 +102,9 @@ class AboutScreen(SubScreen):
 
 class QRScanScreen(Screen):
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        Clock.schedule_once(self._after_init)
-
-    def _after_init(self, dt):
+    def on_kv_post(self, *largs):
         """
-        Binds `ZBarCam.on_symbols()` event.
+        Binds `ZBarCam.on_symbols()` event when kv is ready.
         """
         zbarcam = self.ids.zbarcam_id
         zbarcam.bind(symbols=self.on_symbols)
@@ -219,10 +215,8 @@ def configure_sentry(in_debug=False):
 
 class MainApp(App):
 
+    icon = StringProperty('docs/images/icon.png')
     theme_cls = ThemeManager()
-
-    def build(self):
-        self.icon = "docs/images/icon.png"
 
 
 def main():
@@ -233,7 +227,7 @@ def main():
     try:
         MainApp().run()
     except Exception:
-        if type(client) == Client:
+        if isinstance(client, Client):
             Logger.info(
                 'Errors will be sent to Sentry, run with "--debug" if you '
                 'are a developper and want to the error in the shell.')
